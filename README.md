@@ -5,7 +5,7 @@ Welcome to AudioConverter! This repository contains two Python scripts for audio
 ## Scripts
 
 1. audio_converter.py
-2. re-encode_audio_files.py
+2. reencode_audio.py
 
 ## Requirements
 
@@ -54,7 +54,7 @@ Supported formats: wav, mp3, ogg, flac, aac
 Enter the input audio format (e.g., wav): wav
 Enter the output audio format (e.g., mp3): mp3
 ```
-## re-encode_audio_files.py
+## reencode_audio.py
 
 This script re-encodes audio files from one format to another (or to the same format).
 
@@ -70,7 +70,7 @@ This script re-encodes audio files from one format to another (or to the same fo
 
 1. Run the script
    ```sh
-   python re-encode_audio_files.py
+   python reencode_audio.py
    ```
 2. Follow the prompts to enter the folder path and the input/output audio formats.
 
