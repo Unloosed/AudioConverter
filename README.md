@@ -1,55 +1,84 @@
-# Game Menu
+# Audio Processing Scripts
 
-This project is a simple game menu built using Python's Tkinter library. It allows users to select and start different games from a graphical interface.
+Welcome to the Audio Processing Scripts repository! This repository contains two Python scripts for audio file conversion and re-encoding.
 
-## Features
+## Scripts
 
-- **House Escape**: A thrilling escape game.
-- **Snake**: The classic snake game.
+1. audio_converter.py
+2. re-encode_audio_files.py
+
+## Requirements
+
+- Python 3.x
+- `pydub` library
+- `ffmpeg` installed and accessible from your system's PATH
+- `ffmpeg-python` library (for re-encoding script)
 
 ## Installation
 
-1. **Clone the repository**:
-    ```bash
-    git clone https://github.com/Unloosed/PythonGameCollection.git
-    cd PythonGameCollection
-    ```
+1. Install the required Python libraries:
+   ```sh
+   pip install pydub ffmpeg-python
+   ```
+2. Download and install ffmpeg from [ffmpeg.org](https://ffmpeg.org/).
 
-2. **Create a virtual environment** (optional but recommended):
-    ```bash
-    python -m venv myenv
-    source myenv/bin/activate  # On Windows use `myenv\Scripts\activate`
-    ```
+## audio_converter.py
 
-3. **Install the dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
+This script converts audio files from one format to another.
 
-## Usage
+### Supported Formats
 
-Run the main script to start the game menu:
+- wav
+- mp3
+- ogg
+- flac
+- aac
+
+### Usage
+
+1. Run the script
+   ```sh
+   python audio_converter.py
+   ```
+2. Follow the prompts to enter the folder path and the input/output audio formats.
+
+### Example
+
 ```bash
-python main_GUI.py
+Welcome to the Audio Converter!
+
+Please enter the full path for the folder that contains your audio files: /path/to/your/folder
+Supported formats: wav, mp3, ogg, flac, aac
+Enter the input audio format (e.g., wav): wav
+Enter the output audio format (e.g., mp3): mp3
 ```
+## re-encode_audio_files.py
 
-## Project Structure
+This script re-encodes audio files from one format to another (or to the same format).
 
-- `main_GUI.py`: The main script that launches the game menu in an interactable **GUI**.
-- `games/`: Directory containing all game-specific files.
-    - `house_escape.py`: Contains the logic for the House Escape game.
-    - `snake.py`: Contains the logic for the Snake game.
-- `requirements.txt`: Lists the dependencies required for the project.
-- `main_TEXT.py` (deprecated): The main script that launches the game menu in an interactable **text-based format**. This file is no longer maintained.
+### Supported Formats
 
-## Contributing
+- wav
+- mp3
+- ogg
+- flac
+- aac
 
-Contributions are welcome! Please fork the repository and submit a pull request.
+### Usage
 
-## License
+1. Run the script
+   ```sh
+   python re-encode_audio_files.py
+   ```
+2. Follow the prompts to enter the folder path and the input/output audio formats.
 
-This project is licensed under the MIT License. See the [LICENSE.txt](https://github.com/Unloosed/PythonGameCollection?tab=MIT-1-ov-file) file for details.
+### Example
 
-## Acknowledgements
+```bash
+Welcome to the Audio Re-Encoder!
 
-Thanks to the developers of the Tkinter library for making GUI development in Python straightforward.
+Please enter the full path for the folder that contains your audio files: /path/to/your/folder
+Supported formats: wav, mp3, ogg, flac, aac
+Enter the input audio format (e.g., wav): wav
+Enter the output audio format (e.g., mp3): mp3
+```
