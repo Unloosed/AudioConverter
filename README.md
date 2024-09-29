@@ -1,34 +1,8 @@
-# Audio Processing Scripts
+# Audio Processor
 
-Welcome to AudioConverter! This repository contains two Python scripts for audio file conversion and re-encoding.
+Welcome to the Audio Processor! This tool allows you to convert and re-encode audio files in various formats. It also provides functionality to revert re-encoded filenames.
 
-## Scripts
-
-1. audio_converter.py
-2. reencode_audio.py
-
-## Requirements
-
-See the [requirements.txt](https://github.com/Unloosed/AudioConverter/blob/main/requirements.txt) file for details.
-
-- Python 3.x
-- `pydub` library
-- `ffmpeg-python` library (for re-encoding script)
-- `ffmpeg` installed and accessible from your system's PATH. (Optional)
-
-## Installation
-
-1. Install the required Python libraries:
-   ```sh
-   pip install pydub ffmpeg-python
-   ```
-2. Download and install ffmpeg from [ffmpeg.org](https://ffmpeg.org/). (Optional)
-
-## audio_converter.py
-
-This script converts audio files from one format to another.
-
-### Supported Formats
+## Supported Formats
 
 - wav
 - mp3
@@ -36,58 +10,68 @@ This script converts audio files from one format to another.
 - flac
 - aac
 
-### Usage
+## Functionalities
 
-1. Run the script
-   ```sh
-   python audio_converter.py
-   ```
-2. Follow the prompts to enter the folder path and the input/output audio formats.
+1. Convert audio files from one format to another.
+2. Re-encode audio files and add a `reencoded_` prefix to the output filenames.
+3. Revert filenames by removing the `reencoded_` prefix.
 
-### Example
+## Usage
+
+### Prerequisites
+
+Make sure you have the following Python packages installed:
+
+```bash
+pip install pydub
+pip install ffmpeg
+```
+### Running the Script
+1. Clone the repository or download the script.
+2. Open a terminal and navigate to the directory containing the script.
+3. Run the script using Python:
+
+```bash
+python audio_processor.py
+```
+
+### Instructions
+1. When prompted, enter the full path to the folder containing your audio files.
+2. Choose the input and output audio formats from the supported formats.
+3. Select the desired action:
+   - Enter `1` to convert audio files.
+   - Enter `2` to re-encode audio files.
+   - Enter `3` to revert re-encoded filenames.
+4. Follow the prompts to complete the action.
+
+## Example
 
 ```
-Welcome to the Audio Converter!
+Welcome to the Audio Processor!
+
+This tool provides the following functionalities:
+1. Convert audio files from one format to another.
+2. Re-encode audio files and add a 'reencoded_' prefix to the output filenames.
+3. Revert filenames by removing the 'reencoded_' prefix.
 
 Please enter the full path for the folder that contains your audio files: /path/to/your/folder
 Supported formats: wav, mp3, ogg, flac, aac
 Enter the input audio format (e.g., wav): wav
 Enter the output audio format (e.g., mp3): mp3
-```
-## reencode_audio.py
+Do you want to (1) Convert, (2) Re-encode, or (3) Revert re-encoded filenames? Enter 1, 2, or 3: 1
+Converted /path/to/your/folder/file.wav to /path/to/your/folder/file.mp3
+...
+Conversion complete!
 
-This script re-encodes audio files from one format to another (or to the same format).
-
-### Supported Formats
-
-- wav
-- mp3
-- ogg
-- flac
-- aac
-
-### Usage
-
-1. Run the script
-   ```sh
-   python reencode_audio.py
-   ```
-2. Follow the prompts to enter the folder path and the input/output audio formats.
-
-### Example
-
-```
-Welcome to the Audio Re-Encoder!
-
-Please enter the full path for the folder that contains your audio files: /path/to/your/folder
-Supported formats: wav, mp3, ogg, flac, aac
-Enter the input audio format (e.g., wav): wav
-Enter the output audio format (e.g., mp3): mp3
+Do you want to perform another action? (yes/no): no
+Thank you for using the Audio Processor! Goodbye!
 ```
 
 ## Error Handling
-
-Both scripts include error handling to manage files that cannot be decoded or re-encoded and other potential issues. If an error occurs, the script will skip the problematic file and continue processing the rest.
+- If the folder path is invalid, you will be prompted to enter a valid directory.
+- If the input or output format is unsupported, you will be prompted to choose from the supported formats.
+- If a file cannot be decoded, it will be skipped with an appropriate message.
+- If a file with the target name already exists during renaming, the operation will be skipped with an appropriate message.
 
 ## License
 
