@@ -46,7 +46,7 @@ This script converts audio files from one format to another.
 
 ### Example
 
-```bash
+```
 Welcome to the Audio Converter!
 
 Please enter the full path for the folder that contains your audio files: /path/to/your/folder
@@ -76,7 +76,7 @@ This script re-encodes audio files from one format to another (or to the same fo
 
 ### Example
 
-```bash
+```
 Welcome to the Audio Re-Encoder!
 
 Please enter the full path for the folder that contains your audio files: /path/to/your/folder
