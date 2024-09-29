@@ -1,6 +1,6 @@
 # Audio Processing Scripts
 
-Welcome to the Audio Processing Scripts repository! This repository contains two Python scripts for audio file conversion and re-encoding.
+Welcome to AudioConverter! This repository contains two Python scripts for audio file conversion and re-encoding.
 
 ## Scripts
 
@@ -9,10 +9,12 @@ Welcome to the Audio Processing Scripts repository! This repository contains two
 
 ## Requirements
 
+See the [requirements.txt](https://github.com/Unloosed/AudioConverter/blob/main/requirements.txt) file for details.
+
 - Python 3.x
 - `pydub` library
-- `ffmpeg` installed and accessible from your system's PATH
 - `ffmpeg-python` library (for re-encoding script)
+- `ffmpeg` installed and accessible from your system's PATH. (Optional)
 
 ## Installation
 
@@ -20,7 +22,7 @@ Welcome to the Audio Processing Scripts repository! This repository contains two
    ```sh
    pip install pydub ffmpeg-python
    ```
-2. Download and install ffmpeg from [ffmpeg.org](https://ffmpeg.org/).
+2. Download and install ffmpeg from [ffmpeg.org](https://ffmpeg.org/). (Optional)
 
 ## audio_converter.py
 
@@ -82,3 +84,15 @@ Supported formats: wav, mp3, ogg, flac, aac
 Enter the input audio format (e.g., wav): wav
 Enter the output audio format (e.g., mp3): mp3
 ```
+
+## Error Handling
+
+Both scripts include error handling to manage files that cannot be decoded or re-encoded and other potential issues. If an error occurs, the script will skip the problematic file and continue processing the rest.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE.txt](https://github.com/Unloosed/AudioConverter/tree/main?tab=MIT-1-ov-file) file for details.
+
+## Acknowledgements
+
+Thanks to the developers of the ffmpeg Python library for making audio re-encoding easy. Also thanks to the developers of the pydub library for making the audio conversions possible. Also also thanks to the creators of ffmpeg for the amazing tool :)
