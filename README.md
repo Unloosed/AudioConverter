@@ -4,11 +4,11 @@ Welcome to the Audio Processor! This tool allows you to convert and re-encode au
 
 ## Supported Formats
 
-- wav
-- mp3
-- ogg
-- flac
-- aac
+- WAV
+- MP3
+- OGG
+- FLAC
+- AAC
 
 ## Functionalities
 
