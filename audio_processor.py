@@ -106,8 +106,8 @@ def main():
             print(INVALID_CHOICE_MSG)
             continue
 
-        another_action = input("Do you want to perform another action? (yes/no): ").strip().lower()
-        if another_action != 'yes':
+        another_action = input("Do you want to perform another action? (y/n): ").strip().lower()
+        if another_action != 'y':
             print(THANK_YOU_MSG)
             break
 
