@@ -24,7 +24,6 @@ Make sure you have the following Python packages installed:
 
 ```bash
 pip install pydub
-pip install ffmpeg
 ```
 ### Running the Script
 1. Clone the repository or download the script.
@@ -72,6 +71,9 @@ Thank you for using the Audio Processor! Goodbye!
 - If the input or output format is unsupported, you will be prompted to choose from the supported formats.
 - If a file cannot be decoded, it will be skipped with an appropriate message.
 - If a file with the target name already exists during renaming, the operation will be skipped with an appropriate message.
+
+## GUI
+This project also has a GUI implementation. This can be found in `audio_processor_gui.py`
 
 ## License
 
