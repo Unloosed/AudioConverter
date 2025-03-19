@@ -5,7 +5,8 @@ from pydub import AudioSegment
 from pydub.exceptions import CouldntDecodeError
 
 # Supported audio formats
-SUPPORTED_FORMATS = ["wav", "mp3", "ogg", "flac", "aac"]
+SUPPORTED_FORMATS = ["wav", "mp3", "ogg", "flac", "aac", "opus"]
+
 
 def convert_audio(files, output_format):
     for input_file in files:
@@ -19,17 +20,21 @@ def convert_audio(files, output_format):
         except Exception as e:
             print(f"An error occurred with {input_file}: {e}")
 
+
 def reencode_audio(files, output_format):
     for input_file in files:
         try:
             audio = AudioSegment.from_file(input_file)
-            output_file = os.path.join(os.path.dirname(input_file), "reencoded_" + os.path.splitext(os.path.basename(input_file))[0] + f".{output_format}")
+            output_file = os.path.join(os.path.dirname(input_file),
+                                       "reencoded_" + os.path.splitext(os.path.basename(input_file))[
+                                           0] + f".{output_format}")
             audio.export(output_file, format=output_format)
             print(f"Re-encoded {input_file} to {output_file}")
         except CouldntDecodeError:
             print(f"Could not decode {input_file}. Skipping...")
         except Exception as e:
             print(f"An error occurred with {input_file}: {e}")
+
 
 def revert_reencode_name(folder_path):
     for filename in os.listdir(folder_path):
@@ -44,12 +49,14 @@ def revert_reencode_name(folder_path):
                 os.rename(old_file, new_file)
                 print(f"Renamed: {old_file} to {new_file}")
 
+
 def select_files():
-    files = filedialog.askopenfilenames(filetypes=[("Audio Files", "*.wav *.mp3 *.ogg *.flac *.aac")])
+    files = filedialog.askopenfilenames(filetypes=[("Audio Files", "*.wav *.mp3 *.ogg *.flac *.aac *.opus")])
     if not files:
         messagebox.showerror("Error", "No files selected. Please select valid audio files.")
         return None
     return files
+
 
 def perform_action(action):
     files = select_files()
@@ -75,6 +82,7 @@ def perform_action(action):
         revert_reencode_name(folder_path)
         messagebox.showinfo("Info", "Renaming complete!")
 
+
 # GUI setup
 root = tk.Tk()
 root.title("Audio Processor")
@@ -82,8 +90,11 @@ root.title("Audio Processor")
 # Output format selection
 tk.Label(root, text="Select Output Format:").grid(row=0, column=0, padx=10, pady=10, columnspan=2)
 output_format_var = tk.StringVar(value=SUPPORTED_FORMATS[0])
-for i, format in enumerate(SUPPORTED_FORMATS):
-    tk.Radiobutton(root, text=format, variable=output_format_var, value=format).grid(row=1, column=i, padx=5, pady=10)
+for i, supported_format in enumerate(SUPPORTED_FORMATS):
+    tk.Radiobutton(root, text=supported_format, variable=output_format_var, value=supported_format).grid(row=1,
+                                                                                                         column=i,
+                                                                                                         padx=5,
+                                                                                                         pady=10)
 
 # Action buttons
 tk.Button(root, text="Convert", command=lambda: perform_action('convert')).grid(row=2, column=0, padx=10, pady=10)

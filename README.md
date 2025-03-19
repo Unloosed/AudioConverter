@@ -9,6 +9,7 @@ Welcome to the Audio Processor! This tool allows you to convert and re-encode au
 - OGG
 - FLAC
 - AAC
+- OPUS
 
 ## Functionalities
 
